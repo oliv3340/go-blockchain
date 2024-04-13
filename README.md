@@ -1,5 +1,7 @@
-# Go template
+# Go Blockchain
 
-Repository template for go project.
+![GitHub Release](https://img.shields.io/github/v/release/oliv3340/go-blockchain)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/oliv3340/go-blockchain/go-ci.yml?branch=main)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/oliv3340/go-blockchain)
 
-This project include [reusable-workflows](https://github.com/oliv3340/reusable-workflows-go) for `Go` lannguage.
+Blockchain project build in `Go`.
