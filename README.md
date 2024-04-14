@@ -9,8 +9,8 @@ This project is a technical lab to learn how works a blockchain in `Golang`.
 ## Features supported
 
 - Block definition and creation
-- blockchain implementation
-- proof of work feature
+- Blockchain implementation
+- Proof of work feature
 
 ## What is a blockchain ?
 
@@ -27,7 +27,7 @@ type Block struct {
 }
 ```
 
-The the blockchain is an array of blocks
+The blockchain is an array of blocks
 
 ```Go
 type Blockchain struct {
@@ -42,7 +42,7 @@ type Blockchain struct {
 Go to the repo path and build the project
 
 ```bash
-$ go build
+$ go mod tidy && go build
 ```
 
 ### Step 2
@@ -52,3 +52,5 @@ Run the binary previously created
 ```bash
 $ go run go-blockchain
 ```
+
+And you should see the blockchain setup, starting by the genesis block generation and two simulated transaction, with proof of work process.
