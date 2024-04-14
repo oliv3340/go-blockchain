@@ -11,6 +11,7 @@ This project is a technical lab to learn how works a blockchain in `Golang`.
 - Block definition and creation
 - Blockchain implementation
 - Proof of work feature
+- Persistence data using BoltDB
 
 ## What is a blockchain ?
 
