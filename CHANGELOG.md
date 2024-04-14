@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/oliv3340/go-blockchain/compare/v1.1.0...v1.2.0) (2024-04-14)
+
+
+### Features
+
+* add persitence data with BoltDB and create a CLI ([ae22e05](https://github.com/oliv3340/go-blockchain/commit/ae22e05ada71e19b1263b66ae1e8e94c17ae367f))
+
 ## [1.1.0](https://github.com/oliv3340/go-blockchain/compare/v1.0.0...v1.1.0) (2024-04-14)
 
 
