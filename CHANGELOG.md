@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/oliv3340/go-blockchain/compare/v1.0.0...v1.1.0) (2024-04-14)
+
+
+### Features
+
+* add proofofwork feature ([2c8a89a](https://github.com/oliv3340/go-blockchain/commit/2c8a89a5eb18de83b8adf785cb0ea4541783fa65))
+
 ## 1.0.0 (2024-04-14)
 
 
