@@ -55,6 +55,9 @@ func (bc *Blockchain) AddBlock(data string) {
 
 		return nil
 	})
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 // Iterator ...
