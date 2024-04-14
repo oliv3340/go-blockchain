@@ -4,23 +4,15 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/oliv3340/go-blockchain/go-ci.yml?branch=main)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/oliv3340/go-blockchain)
 
-Blockchain project build in `Go`.
+This project is a technical lab to learn how works a blockchain in `Golang`.
 
-## How to run it
+## Features supported
 
-### Build the package 
+- Block definition and creation
+- blockchain implementation
+- proof of work feature
 
-```bash
-$ go build
-```
-
-### Run it
-
-```bash
-$ go run go-blockchain
-```
-
-## What is a blockchain
+## What is a blockchain ?
 
 > **Note** : this is a simplified explanation
 
@@ -41,4 +33,22 @@ The the blockchain is an array of blocks
 type Blockchain struct {
 	blocks []*Block
 }
+```
+
+## How to run it
+
+### Step 1
+
+Go to the repo path and build the project
+
+```bash
+$ go build
+```
+
+### Step 2
+
+Run the binary previously created
+
+```bash
+$ go run go-blockchain
 ```
