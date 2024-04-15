@@ -61,44 +61,82 @@ Usage:
 
 And you should see the blockchain setup, starting by the genesis block generation and two simulated transaction, with proof of work process.
 
+### Create the blockchain
+
+```bash
+$ ./go-blockchain createblockchain -address john
+```
+Output :
+```bash 
+00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
+
+Done!
+```
+
+### Get balance
+
+```bash
+./go-blockchain getbalance -address john
+```
+Output :
+```bash   
+Balance of 'john': 10
+```
+
+### Send tokens
+
+```bash
+./go-blockchain send -from john -to smith -amount 4
+```
+Example :
+```bash
+./go-blockchain getbalance -address john 
+Balance of 'john': 10
+
+./go-blockchain getbalance -address smith  
+Balance of 'smith': 0
+
+./go-blockchain send -from john -to smith -amount 4
+000000a7a55b7854f6fecf24b7e634787b8ed4854be84f892331ecaa0e1c3e8d
+
+Success!
+
+./go-blockchain getbalance -address john  
+Balance of 'john': 6
+
+./go-blockchain getbalance -address smith  
+Balance of 'smith': 4
+```
+
 ### Print chain content
 
 ```bash
-$ ./go-blockchain printchain
-No existing blockchain found. Creating a new one...
-Mining the block containing "Genesis Block"
-000000bdcd052450c2c0b9d71b4c25d2eb543d74f1b38f4c17b812d5f8512702
-
-Prev. hash: 
-Data: Genesis Block
-Hash: 000000bdcd052450c2c0b9d71b4c25d2eb543d74f1b38f4c17b812d5f8512702
+./go-blockchain printchain
+```
+Output :
+```bash 
+Prev. hash: 000000af9662d14ae94b6afa5ca8073c869b8aa9ad69546b0163c935ace53231
+Hash: 0000006e2613aa583d72f96d588267cf3d7889739ff7a8d958d9914a7890079a
 PoW: true
-```
 
-### Add new block to the blockchain
+Prev. hash: 000000ebdcde39166d2bf314807bce4305e8cd3f5f134c2be1308e441754b49b
+Hash: 000000af9662d14ae94b6afa5ca8073c869b8aa9ad69546b0163c935ace53231
+PoW: true
 
-```bash
-$ ./go-blockchain addblock -data "Send 1 BTC to John Smith"
-Mining the block containing "Send 1 BTC to John Smith"
-0000006f21aba63ef2de138ef697fb5344e10d42442aa2bf3ed9dcdf78b5831a
+Prev. hash: 000000b8b4d4ba862ffb921e91d226b92a4db891eda85c4f8ab9be921da8af1a
+Hash: 000000ebdcde39166d2bf314807bce4305e8cd3f5f134c2be1308e441754b49b
+PoW: true
 
-Success!
-```
-
-And print the chain once again
-
-```bash
-$ ./go-blockchain printchain
-Prev. hash: 000000bdcd052450c2c0b9d71b4c25d2eb543d74f1b38f4c17b812d5f8512702
-Data: Send 1 BTC to John Smith
-Hash: 0000006f21aba63ef2de138ef697fb5344e10d42442aa2bf3ed9dcdf78b5831a
+Prev. hash: 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
+Hash: 000000b8b4d4ba862ffb921e91d226b92a4db891eda85c4f8ab9be921da8af1a
 PoW: true
 
 Prev. hash: 
-Data: Genesis Block
-Hash: 000000bdcd052450c2c0b9d71b4c25d2eb543d74f1b38f4c17b812d5f8512702
+Hash: 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
 PoW: true
 ```
+
+
 
 ## Proof of Work
 
