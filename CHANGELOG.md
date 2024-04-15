@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/oliv3340/go-blockchain/compare/v1.2.0...v1.3.0) (2024-04-15)
+
+
+### Features
+
+* add transactions ([a3ea50c](https://github.com/oliv3340/go-blockchain/commit/a3ea50cf47edd2804414dfaf8654d3c67415eca9))
+
 ## [1.2.0](https://github.com/oliv3340/go-blockchain/compare/v1.1.0...v1.2.0) (2024-04-14)
 
 
