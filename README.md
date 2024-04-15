@@ -17,7 +17,7 @@ This project is a technical lab to learn how works a blockchain in `Golang`.
 
 > **Note** : this is a simplified explanation
 
-A blockchain is a public database of records, composed of blocks. Each blocks contains, a `creation timestamp`, the `block's data`, the `previous block hash` and the `current hash`.
+A blockchain is a public database of records, composed of blocks. Each blocks contains, a `creation timestamp`, the `block's data: a transaction`, the `previous block hash` and the `current hash`.
 
 ```Go
 type Block struct {
@@ -99,6 +99,22 @@ Data: Genesis Block
 Hash: 000000bdcd052450c2c0b9d71b4c25d2eb543d74f1b38f4c17b812d5f8512702
 PoW: true
 ```
+
+## Proof of Work
+
+Proof of work trigger when a block is closed and before a new one can be open. It can be resume by `solving the Hash` which mean finding the new available hash possible for a new block.
+
+BTC use [Hashcash](https://en.wikipedia.org/wiki/Hashcash) proof of work alogrythm.
+
+### How it's work
+
+It can be simplified like this :
+- Take some publicly known data (in case of Bitcoin, it’s block headers).
+- Add a counter to it. The counter starts at 0.
+- Get a hash of the data + counter combination.
+- Check that the hash meets certain requirements.
+    - If it does, you’re done.
+	- If it doesn’t, increase the counter and repeat the steps 3 and 4.
 
 ## Data persistence
 
