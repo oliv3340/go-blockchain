@@ -55,8 +55,10 @@ Run the CLI
 ```bash
 $ ./go-blockchain
 Usage:
-  addblock -data BLOCK_DATA - add a block to the blockchain
-  printchain - print all the blocks of the blockchain
+  getbalance -address ADDRESS - Get balance of ADDRESS
+  createblockchain -address ADDRESS - Create a blockchain and send genesis block reward to ADDRESS
+  printchain - Print all the blocks of the blockchain
+  send -from FROM -to TO -amount AMOUNT - Send AMOUNT of coins from FROM address to TO
 ```
 
 And you should see the blockchain setup, starting by the genesis block generation and two simulated transaction, with proof of work process.
