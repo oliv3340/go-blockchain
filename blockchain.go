@@ -58,6 +58,9 @@ func (bc *Blockchain) MineBlock(transactions []*Transaction) {
 
 		return nil
 	})
+	if err != nil {
+		log.Panic(err)
+	}
 }
 
 // FindUnspentTransactions returns a list of transactions containing unspent outputs
@@ -88,7 +91,7 @@ func (bc *Blockchain) FindUnspentTransactions(address string) []Transaction {
 				}
 			}
 
-			if tx.IsCoinbase() == false {
+			if !tx.IsCoinbase() {
 				for _, in := range tx.Vin {
 					if in.CanUnlockOutputWith(address) {
 						inTxID := hex.EncodeToString(in.Txid)
@@ -185,7 +188,7 @@ func dbExists() bool {
 
 // NewBlockchain creates a new Blockchain with genesis Block
 func NewBlockchain(address string) *Blockchain {
-	if dbExists() == false {
+	if !dbExists() {
 		fmt.Println("No existing blockchain found. Create one first.")
 		os.Exit(1)
 	}
