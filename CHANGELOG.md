@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/oliv3340/go-blockchain/compare/v1.3.0...v1.3.1) (2024-04-16)
+
+
+### Bug Fixes
+
+* blockchain condition to match lint CI ([cd6c21c](https://github.com/oliv3340/go-blockchain/commit/cd6c21ce7a175be56053050b145dfc28985e55b5))
+
 ## [1.3.0](https://github.com/oliv3340/go-blockchain/compare/v1.2.0...v1.3.0) (2024-04-15)
 
 
