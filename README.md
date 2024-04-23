@@ -17,26 +17,32 @@ This project is a technical lab to learn how works a blockchain in `Golang`.
 
 > **Note** : this is a simplified explanation
 
-A blockchain is a public database of records, composed of blocks. Each blocks contains, a `creation timestamp`, the `block's data: a transaction`, the `previous block hash` and the `current hash`.
+A blockchain is a public database of records,
+composed of blocks. Each blocks contains,
+a `creation timestamp`,
+the `block's data: a transaction`,
+the `previous block hash` and the `current hash`.
 
 ```Go
 type Block struct {
-	Timestamp     int64
-	Data          []byte
-	PrevBlockHash []byte
-	Hash          []byte
+  Timestamp     int64
+  Data          []byte
+  PrevBlockHash []byte
+  Hash          []byte
 }
 ```
 
-The blockchain is an array of blocks, this could be simplified as this :
+The blockchain is an array of blocks,
+this could be simplified as this :
 
 ```Go
 type Blockchain struct {
-	blocks []*Block
+  blocks []*Block
 }
 ```
 
-Off course, in order to persiste the data, this struct change in consequence.
+Off course, in order to persiste the data,
+this struct change in consequence.
 
 ## How to run it ?
 
@@ -45,7 +51,7 @@ Off course, in order to persiste the data, this struct change in consequence.
 Go to the repo path and build the project
 
 ```bash
-$ go mod tidy && go build
+go mod tidy && go build
 ```
 
 ### Run the cli
@@ -61,15 +67,19 @@ Usage:
   send -from FROM -to TO -amount AMOUNT - Send AMOUNT of coins from FROM address to TO
 ```
 
-And you should see the blockchain setup, starting by the genesis block generation and two simulated transaction, with proof of work process.
+And you should see the blockchain setup,
+starting by the genesis block generation and two simulated
+transaction, with proof of work process.
 
 ### Create the blockchain
 
 ```bash
-$ ./go-blockchain createblockchain -address john
+./go-blockchain createblockchain -address john
 ```
+
 Output :
-```bash 
+
+```bash
 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
 
 Done!
@@ -80,8 +90,10 @@ Done!
 ```bash
 ./go-blockchain getbalance -address john
 ```
+
 Output :
-```bash   
+
+```bash
 Balance of 'john': 10
 ```
 
@@ -90,7 +102,9 @@ Balance of 'john': 10
 ```bash
 ./go-blockchain send -from john -to smith -amount 4
 ```
+
 Example :
+
 ```bash
 ./go-blockchain getbalance -address john 
 Balance of 'john': 10
@@ -115,8 +129,10 @@ Balance of 'smith': 4
 ```bash
 ./go-blockchain printchain
 ```
+
 Output :
-```bash 
+
+```bash
 Prev. hash: 000000af9662d14ae94b6afa5ca8073c869b8aa9ad69546b0163c935ace53231
 Hash: 0000006e2613aa583d72f96d588267cf3d7889739ff7a8d958d9914a7890079a
 PoW: true
@@ -138,24 +154,32 @@ Hash: 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
 PoW: true
 ```
 
-
-
 ## Proof of Work
 
-Proof of work trigger when a block is closed and before a new one can be open. It can be resume by `solving the Hash` which mean finding the new available hash possible for a new block.
+Proof of work trigger when a block is closed and before a new one can be open.
+It can be resume by `solving the Hash` which
+mean finding the new available hash possible for a new block.
 
 BTC use [Hashcash](https://en.wikipedia.org/wiki/Hashcash) proof of work alogrythm.
 
 ### How it's work
 
 It can be simplified like this :
+
 - Take some publicly known data (in case of Bitcoin, it’s block headers).
 - Add a counter to it. The counter starts at 0.
 - Get a hash of the data + counter combination.
 - Check that the hash meets certain requirements.
-    - If it does, you’re done.
-	- If it doesn’t, increase the counter and repeat the steps 3 and 4.
+  - If it does, you’re done.
+  - If it doesn’t, increase the counter and repeat the steps 3 and 4.
 
 ## Data persistence
 
 In order to persist the data, I use `BoltDB` in a single db file to keep it simple. Like this we can reuse our blockchain.
+
+## TODO
+
+I still need to :
+
+- implement addresses and wallet
+- implement network
