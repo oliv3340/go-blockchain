@@ -106,10 +106,10 @@ Balance of 'john': 10
 Example :
 
 ```bash
-./go-blockchain getbalance -address john 
+./go-blockchain getbalance -address john
 Balance of 'john': 10
 
-./go-blockchain getbalance -address smith  
+./go-blockchain getbalance -address smith
 Balance of 'smith': 0
 
 ./go-blockchain send -from john -to smith -amount 4
@@ -117,10 +117,10 @@ Balance of 'smith': 0
 
 Success!
 
-./go-blockchain getbalance -address john  
+./go-blockchain getbalance -address john
 Balance of 'john': 6
 
-./go-blockchain getbalance -address smith  
+./go-blockchain getbalance -address smith
 Balance of 'smith': 4
 ```
 
@@ -149,7 +149,7 @@ Prev. hash: 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
 Hash: 000000b8b4d4ba862ffb921e91d226b92a4db891eda85c4f8ab9be921da8af1a
 PoW: true
 
-Prev. hash: 
+Prev. hash:
 Hash: 00000055ab36d4542da2198662c2d752f689f8b4a89d4cc4b55e885da764a737
 PoW: true
 ```
@@ -175,7 +175,8 @@ It can be simplified like this :
 
 ## Data persistence
 
-In order to persist the data, I use `BoltDB` in a single db file to keep it simple. Like this we can reuse our blockchain.
+In order to persist the data, I use `BoltDB` in a single db file to keep it
+simple. Like this we can reuse our blockchain.
 
 ## TODO
 
